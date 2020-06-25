@@ -12,11 +12,11 @@ DROP TABLE users
 CREATE TABLE users
 (
     id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
-    name NVARCHAR(100),
+    uuid UNIQUEIDENTIFIER, -- For Firebase: sha128 hash the Firebase UUID -> convert to UUID format
     created DATETIME2,
     updated DATETIME2
 )
-CREATE INDEX users_index ON users (id, name, created, updated)
+CREATE INDEX users_index ON users (id, uuid, created, updated)
 
 CREATE TABLE user_details
 (
