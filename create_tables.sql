@@ -163,6 +163,6 @@ CREATE TABLE trip_report_hashtags
     trip_report_id UNIQUEIDENTIFIER FOREIGN KEY REFERENCES trip_reports(id),
     hashtag_id UNIQUEIDENTIFIER FOREIGN KEY REFERENCES hashtags(id),
     created DATETIME2,
-    updated DATETIME2,
+    updated DATETIME2
 )
 CREATE INDEX trip_report_hashtags_index ON trip_report_hashtags (id, created, updated)
