@@ -47,8 +47,8 @@ CREATE INDEX products_index ON products (id, product_id, created, updated)
 CREATE TABLE purchase_histories
 (
     id UNIQUEIDENTIFIER DEFAULT NEWSEQUENTIALID() PRIMARY KEY,
-    product_id UNIQUEIDENTIFIER FOREIGN KEY REFERENCES users(id),
-    user_id UNIQUEIDENTIFIER FOREIGN KEY REFERENCES products(id),
+    product_id UNIQUEIDENTIFIER FOREIGN KEY REFERENCES products(id),
+    user_id UNIQUEIDENTIFIER FOREIGN KEY REFERENCES users(id),
     purchase_id NVARCHAR(2000), -- == order_id // TODO: check this warning from idexing this column: Warning! The maximum key length for a nonclustered index is 1700 bytes. The index 'purchase_histories_index' has maximum length of 4233 bytes. For some combination of large values, the insert/update operation will fail.
     local_verification_data NVARCHAR(4000), -- TODO: confirm max length
     server_verification_data NVARCHAR(4000), -- TODO: confirm max length
