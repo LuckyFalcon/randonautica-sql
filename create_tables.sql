@@ -99,6 +99,7 @@ CREATE TABLE trip_reports
     is_visited TINYINT, -- boolean 0 = not visited, 1 = visited
     is_logged TINYINT, -- boolean 0 = not logged, 1 = logged
     is_favorite TINYINT, -- boolean 0 = not favorite, 1 = is favorite
+    is_saved TINYINT, -- boolean 0 = not saved, 1 = is saved
 
     -- TODO: add a column(s) for tracking posted logs to Twitter/Reddit etc?
     
